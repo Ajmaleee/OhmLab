@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series Resistance Calculator - OhmLab</title>
+    <meta name="description" content="Calculate total resistance for resistors connected in series. Add unlimited resistors and get instant results.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html" class="active">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="calculator-page">
+            <h1>Series Resistance Calculator</h1>
+            <p>Calculate total resistance when resistors are connected in series</p>
+
+            <div class="calculator-section">
+                <div class="resistor-inputs" id="resistorInputs">
+                    <div class="resistor-input-row">
+                        <input type="number" placeholder="Enter resistance (Ω)" min="0" step="any">
+                    </div>
+                    <div class="resistor-input-row">
+                        <input type="number" placeholder="Enter resistance (Ω)" min="0" step="any">
+                    </div>
+                </div>
+
+                <button class="btn-add" onclick="addResistor()">+ Add Resistor</button>
+
+                <div style="margin-top: 2rem;">
+                    <button class="btn-primary" onclick="calculateSeries()">Calculate</button>
+                    <button class="btn-outline" onclick="resetCalculator()">Reset</button>
+                </div>
+
+                <div id="result" style="display: none;">
+                    <div class="result-box">
+                        <h3>Total Series Resistance</h3>
+                        <div class="result-value" id="totalResistance"></div>
+                        <p id="formula"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation-section">
+            <h2>Understanding Series Resistance</h2>
+
+            <h3>What is Series Connection?</h3>
+            <p>
+                When resistors are connected in series, they are connected end-to-end in a single path.
+                The same current flows through all resistors, but the voltage drops across each resistor.
+            </p>
+
+            <h3>Formula</h3>
+            <p>
+                The total resistance in a series circuit is simply the sum of all individual resistances:
+            </p>
+            <p style="text-align: center; font-size: 1.2rem; font-weight: 600; margin: 1rem 0;">
+                R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ... + R<sub>n</sub>
+            </p>
+
+            <h3>When to Use Series Connection</h3>
+            <p>
+                Series resistors are used when you need to:
+            </p>
+            <ul>
+                <li>Increase total resistance in a circuit</li>
+                <li>Create voltage dividers</li>
+                <li>Limit current flow</li>
+                <li>Drop voltage across multiple components</li>
+            </ul>
+
+            <h3>Example Calculation</h3>
+            <p>
+                If you have three resistors: 100Ω, 220Ω, and 330Ω connected in series:<br>
+                R<sub>total</sub> = 100 + 220 + 330 = <strong>650Ω</strong>
+            </p>
+
+            <h3>Key Points</h3>
+            <ul>
+                <li>Total resistance always increases in series</li>
+                <li>Current is the same through all resistors</li>
+                <li>Voltage divides across each resistor</li>
+                <li>If one component fails, the entire circuit breaks</li>
+            </ul>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="parallel-resistance.html" class="btn-secondary">Calculate Parallel Resistance</a>
+            <a href="voltage-divider.html" class="btn-secondary">Try Voltage Divider Calculator</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="series-resistance.js"></script>
+</body>
+</html>

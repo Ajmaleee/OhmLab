@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor Color Code Calculator - OhmLab</title>
+    <meta name="description" content="Decode 4-band and 5-band resistor color codes instantly. Calculate resistance values and tolerance with our free calculator.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html" class="active">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="calculator-page">
+            <h1>Resistor Color Code Calculator</h1>
+            <p>Decode resistor color bands to find resistance value and tolerance</p>
+
+            <div class="calculator-section">
+                <div class="form-group">
+                    <label for="bandCount">Number of Bands:</label>
+                    <select id="bandCount" onchange="updateBandInputs()">
+                        <option value="4">4 Bands</option>
+                        <option value="5">5 Bands</option>
+                    </select>
+                </div>
+
+                <div id="bandInputs"></div>
+
+                <div class="color-band-preview" id="bandPreview"></div>
+
+                <button class="btn-primary" onclick="calculateResistance()">Calculate</button>
+                <button class="btn-outline" onclick="resetCalculator()">Reset</button>
+
+                <div id="result" style="display: none;">
+                    <div class="result-box">
+                        <h3>Resistance Value</h3>
+                        <div class="result-value" id="resistanceValue"></div>
+                        <p id="toleranceValue"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation-section">
+            <h2>How Resistor Color Codes Work</h2>
+
+            <h3>Understanding Color Bands</h3>
+            <p>
+                Resistors use colored bands to indicate their resistance value and tolerance. Each color represents
+                a specific number or multiplier. Reading from left to right, the bands tell you the resistance in ohms.
+            </p>
+
+            <h3>4-Band Resistors</h3>
+            <p>
+                <strong>Band 1 & 2:</strong> First and second significant digits<br>
+                <strong>Band 3:</strong> Multiplier (number of zeros)<br>
+                <strong>Band 4:</strong> Tolerance (accuracy)
+            </p>
+
+            <h3>5-Band Resistors</h3>
+            <p>
+                <strong>Band 1, 2 & 3:</strong> First, second, and third significant digits<br>
+                <strong>Band 4:</strong> Multiplier (number of zeros)<br>
+                <strong>Band 5:</strong> Tolerance (accuracy)
+            </p>
+
+            <h3>Color Values</h3>
+            <p>
+                Black = 0, Brown = 1, Red = 2, Orange = 3, Yellow = 4,
+                Green = 5, Blue = 6, Violet = 7, Gray = 8, White = 9
+            </p>
+
+            <h3>Tolerance Ratings</h3>
+            <p>
+                <strong>Gold:</strong> ±5%<br>
+                <strong>Silver:</strong> ±10%<br>
+                <strong>Brown:</strong> ±1%<br>
+                <strong>Red:</strong> ±2%<br>
+                <strong>None:</strong> ±20%
+            </p>
+
+            <h3>Example Calculation</h3>
+            <p>
+                A resistor with bands: <strong>Brown, Black, Red, Gold</strong><br>
+                Brown = 1, Black = 0, Red = ×100, Gold = ±5%<br>
+                Resistance = 10 × 100 = <strong>1,000Ω or 1kΩ ±5%</strong>
+            </p>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="series-resistance.html" class="btn-secondary">Calculate Series Resistance</a>
+            <a href="parallel-resistance.html" class="btn-secondary">Try Parallel Resistance Calculator</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="resistor-color-code.js"></script>
+</body>
+</html>

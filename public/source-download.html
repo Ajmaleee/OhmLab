@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Source Code - OhmLab</title>
+    <meta name="description" content="Download OhmLab source code for development purposes.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="active temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="calculator-page">
+            <h1>Download Source Code</h1>
+
+            <div class="notice-box">
+                <p><strong>Development Notice:</strong> This page is for development and testing purposes only. It will be removed before public deployment.</p>
+            </div>
+
+            <div class="calculator-section">
+                <h2>Full Website Source Code</h2>
+                <p>
+                    Download the complete source code for OhmLab including all HTML files, CSS stylesheets,
+                    JavaScript calculators, and assets used in the website.
+                </p>
+
+                <div style="text-align: center; margin: 3rem 0;">
+                    <button class="btn-primary" id="downloadBtn" onclick="downloadSource()" style="font-size: 1.2rem; padding: 1.5rem 3rem;">
+                        Download Full Source Code
+                    </button>
+                    <p id="downloadStatus" style="margin-top: 1rem; color: var(--text-secondary);"></p>
+                </div>
+
+                <h3>What's Included</h3>
+                <ul>
+                    <li><strong>HTML Files:</strong> All 11 web pages including calculators and legal pages</li>
+                    <li><strong>CSS Stylesheets:</strong> Complete styling with Material Design theme</li>
+                    <li><strong>JavaScript Files:</strong> All calculator logic and navigation code</li>
+                    <li><strong>Responsive Design:</strong> Mobile-friendly layouts and breakpoints</li>
+                    <li><strong>Navigation System:</strong> Fully functional hamburger menu and side drawer</li>
+                </ul>
+
+                <h3>File Structure</h3>
+                <p>The download will contain the following files:</p>
+                <ul>
+                    <li>index.html</li>
+                    <li>resistor-color-code.html & .js</li>
+                    <li>series-resistance.html & .js</li>
+                    <li>parallel-resistance.html & .js</li>
+                    <li>voltage-divider.html & .js</li>
+                    <li>about.html</li>
+                    <li>contact.html & .js</li>
+                    <li>privacy-policy.html</li>
+                    <li>disclaimer.html</li>
+                    <li>terms.html</li>
+                    <li>source-download.html & .js</li>
+                    <li>styles.css</li>
+                    <li>navigation.js</li>
+                </ul>
+
+                <h3>Technical Details</h3>
+                <ul>
+                    <li><strong>Technology Stack:</strong> Pure HTML, CSS, JavaScript</li>
+                    <li><strong>No Dependencies:</strong> No external libraries required</li>
+                    <li><strong>Browser Support:</strong> Modern browsers (Chrome, Firefox, Safari, Edge)</li>
+                    <li><strong>License:</strong> Educational use</li>
+                </ul>
+
+                <h3>Usage</h3>
+                <ol>
+                    <li>Click the download button above</li>
+                    <li>Extract the ZIP file to your desired location</li>
+                    <li>Open index.html in a web browser to view the site</li>
+                    <li>Edit files as needed for your project</li>
+                    <li>Deploy to any web server or hosting service</li>
+                </ol>
+
+                <div class="notice-box" style="margin-top: 2rem;">
+                    <p><strong>Remember:</strong> This download page will not be available in the production version of the website.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="source-download.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - OhmLab</title>
+    <meta name="description" content="Get in touch with OhmLab. We'd love to hear your feedback, suggestions, or questions.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html" class="active">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="legal-page">
+            <h1>Contact Us</h1>
+            <p>
+                We'd love to hear from you! Whether you have questions, suggestions, found a bug,
+                or just want to share feedback, feel free to reach out.
+            </p>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> ajmalsworkshop@gmail.com</p>
+                <p><strong>Phone:</strong> +91 9495050785</p>
+                <p><strong>Location:</strong> Kerala, India</p>
+                <p><strong>Creator:</strong> Ajmal Ali A</p>
+            </div>
+
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" required placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" required placeholder="What is this about?">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="6" required placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                Thank you for your message! We'll get back to you soon.
+            </div>
+
+            <h2>What You Can Contact Us About</h2>
+            <ul>
+                <li><strong>Bug Reports:</strong> Found an error in a calculation or the website? Let us know!</li>
+                <li><strong>Feature Requests:</strong> Have an idea for a new calculator or feature?</li>
+                <li><strong>Educational Use:</strong> Teachers interested in using OhmLab in their classes</li>
+                <li><strong>General Questions:</strong> Questions about how to use the calculators</li>
+                <li><strong>Feedback:</strong> Suggestions for improvements or general feedback</li>
+                <li><strong>Partnerships:</strong> Interested in collaborating or supporting the project</li>
+            </ul>
+
+            <h2>Response Time</h2>
+            <p>
+                We typically respond to messages within 24-48 hours. During busy periods or holidays,
+                it may take a bit longer. Thank you for your patience!
+            </p>
+
+            <h2>Before You Contact</h2>
+            <p>
+                You might find answers to common questions in our other pages:
+            </p>
+            <ul>
+                <li><a href="about.html" style="color: var(--primary-color);">About Us</a> - Learn about OhmLab's mission and approach</li>
+                <li><a href="disclaimer.html" style="color: var(--primary-color);">Disclaimer</a> - Important information about calculator usage</li>
+                <li><a href="terms.html" style="color: var(--primary-color);">Terms & Conditions</a> - Usage guidelines and policies</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

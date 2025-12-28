@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Resistance Calculator - OhmLab</title>
+    <meta name="description" content="Calculate equivalent resistance for resistors connected in parallel. Free calculator with instant results.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html" class="active">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="calculator-page">
+            <h1>Parallel Resistance Calculator</h1>
+            <p>Calculate equivalent resistance when resistors are connected in parallel</p>
+
+            <div class="calculator-section">
+                <div class="resistor-inputs" id="resistorInputs">
+                    <div class="resistor-input-row">
+                        <input type="number" placeholder="Enter resistance (Ω)" min="0" step="any">
+                    </div>
+                    <div class="resistor-input-row">
+                        <input type="number" placeholder="Enter resistance (Ω)" min="0" step="any">
+                    </div>
+                </div>
+
+                <button class="btn-add" onclick="addResistor()">+ Add Resistor</button>
+
+                <div style="margin-top: 2rem;">
+                    <button class="btn-primary" onclick="calculateParallel()">Calculate</button>
+                    <button class="btn-outline" onclick="resetCalculator()">Reset</button>
+                </div>
+
+                <div id="result" style="display: none;">
+                    <div class="result-box">
+                        <h3>Equivalent Parallel Resistance</h3>
+                        <div class="result-value" id="totalResistance"></div>
+                        <p id="formula"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation-section">
+            <h2>Understanding Parallel Resistance</h2>
+
+            <h3>What is Parallel Connection?</h3>
+            <p>
+                When resistors are connected in parallel, they are connected across the same two points,
+                creating multiple paths for current to flow. The voltage across all resistors is the same,
+                but current divides among them.
+            </p>
+
+            <h3>Formula</h3>
+            <p>
+                For parallel resistors, use the reciprocal formula:
+            </p>
+            <p style="text-align: center; font-size: 1.2rem; font-weight: 600; margin: 1rem 0;">
+                1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub> + ... + 1/R<sub>n</sub>
+            </p>
+            <p>
+                For two resistors, there's a simpler formula:
+            </p>
+            <p style="text-align: center; font-size: 1.2rem; font-weight: 600; margin: 1rem 0;">
+                R<sub>total</sub> = (R<sub>1</sub> × R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)
+            </p>
+
+            <h3>Why Resistance Decreases</h3>
+            <p>
+                In parallel circuits, total resistance always decreases because you're creating additional
+                paths for current to flow. Think of it like adding more lanes to a highway - more paths
+                mean less resistance to traffic flow.
+            </p>
+
+            <h3>Where Parallel Circuits Are Used</h3>
+            <ul>
+                <li>House wiring - all outlets are in parallel</li>
+                <li>Battery configurations for higher current</li>
+                <li>Load balancing in circuits</li>
+                <li>Creating specific resistance values</li>
+            </ul>
+
+            <h3>Example Calculation</h3>
+            <p>
+                Two resistors: 100Ω and 200Ω in parallel:<br>
+                R<sub>total</sub> = (100 × 200) / (100 + 200) = 20000 / 300 = <strong>66.67Ω</strong><br>
+                Notice the result is less than the smallest resistor!
+            </p>
+
+            <h3>Key Points</h3>
+            <ul>
+                <li>Total resistance always decreases in parallel</li>
+                <li>Result is always less than the smallest resistor</li>
+                <li>Voltage is the same across all resistors</li>
+                <li>Current divides among the paths</li>
+                <li>If one component fails, others still work</li>
+            </ul>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="series-resistance.html" class="btn-secondary">Calculate Series Resistance</a>
+            <a href="resistor-color-code.html" class="btn-secondary">Decode Resistor Color Codes</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="parallel-resistance.js"></script>
+</body>
+</html>

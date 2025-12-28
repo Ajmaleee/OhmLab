@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltage Divider Calculator - OhmLab</title>
+    <meta name="description" content="Calculate output voltage in voltage divider circuits. Essential tool for circuit design and analysis.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html" class="active">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="calculator-page">
+            <h1>Voltage Divider Calculator</h1>
+            <p>Calculate output voltage in voltage divider circuits</p>
+
+            <div class="calculator-section">
+                <div class="form-group">
+                    <label for="inputVoltage">Input Voltage (V<sub>in</sub>):</label>
+                    <input type="number" id="inputVoltage" placeholder="Enter input voltage in volts" min="0" step="any">
+                </div>
+
+                <div class="form-group">
+                    <label for="r1">Resistor 1 (R<sub>1</sub>) - Top Resistor:</label>
+                    <input type="number" id="r1" placeholder="Enter resistance in ohms" min="0" step="any">
+                </div>
+
+                <div class="form-group">
+                    <label for="r2">Resistor 2 (R<sub>2</sub>) - Bottom Resistor:</label>
+                    <input type="number" id="r2" placeholder="Enter resistance in ohms" min="0" step="any">
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <button class="btn-primary" onclick="calculateVoltageDivider()">Calculate</button>
+                    <button class="btn-outline" onclick="resetCalculator()">Reset</button>
+                </div>
+
+                <div id="result" style="display: none;">
+                    <div class="result-box">
+                        <h3>Output Voltage (V<sub>out</sub>)</h3>
+                        <div class="result-value" id="outputVoltage"></div>
+                        <p id="formula"></p>
+                        <p id="currentInfo"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation-section">
+            <h2>Understanding Voltage Dividers</h2>
+
+            <h3>What is a Voltage Divider?</h3>
+            <p>
+                A voltage divider is a simple circuit that produces an output voltage that is a fraction
+                of its input voltage. It consists of two resistors connected in series, with the output
+                taken from the connection point between them.
+            </p>
+
+            <h3>Formula</h3>
+            <p>
+                The output voltage is calculated using:
+            </p>
+            <p style="text-align: center; font-size: 1.2rem; font-weight: 600; margin: 1rem 0;">
+                V<sub>out</sub> = V<sub>in</sub> × (R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>))
+            </p>
+            <p>
+                Where:
+            </p>
+            <ul>
+                <li><strong>V<sub>in</sub></strong> = Input voltage</li>
+                <li><strong>V<sub>out</sub></strong> = Output voltage</li>
+                <li><strong>R<sub>1</sub></strong> = Top resistor (between V<sub>in</sub> and V<sub>out</sub>)</li>
+                <li><strong>R<sub>2</sub></strong> = Bottom resistor (between V<sub>out</sub> and ground)</li>
+            </ul>
+
+            <h3>Common Applications</h3>
+            <ul>
+                <li><strong>Sensor interfacing:</strong> Scaling sensor voltages to match microcontroller input ranges</li>
+                <li><strong>Reference voltages:</strong> Creating specific voltage levels for circuits</li>
+                <li><strong>Audio volume controls:</strong> Reducing signal levels</li>
+                <li><strong>Battery voltage monitoring:</strong> Scaling down high voltages for measurement</li>
+                <li><strong>Logic level conversion:</strong> Stepping down voltage levels between different logic families</li>
+            </ul>
+
+            <h3>Example Calculation</h3>
+            <p>
+                Given: V<sub>in</sub> = 12V, R<sub>1</sub> = 10kΩ, R<sub>2</sub> = 10kΩ<br>
+                V<sub>out</sub> = 12 × (10k / (10k + 10k)) = 12 × 0.5 = <strong>6V</strong><br>
+                With equal resistors, the output is exactly half the input!
+            </p>
+
+            <h3>Important Considerations</h3>
+            <ul>
+                <li><strong>Load effect:</strong> Connecting a load to V<sub>out</sub> will reduce the output voltage</li>
+                <li><strong>Power dissipation:</strong> Both resistors will dissipate power as heat</li>
+                <li><strong>Current draw:</strong> Lower resistance values = higher current and power consumption</li>
+                <li><strong>Accuracy:</strong> Use precision resistors for accurate voltage division</li>
+                <li><strong>Impedance:</strong> High impedance loads (like voltmeters) won't affect the output</li>
+            </ul>
+
+            <h3>Choosing Resistor Values</h3>
+            <p>
+                For most applications, resistor values between 1kΩ and 100kΩ work well. Higher values
+                reduce power consumption but can be more susceptible to noise. Lower values draw more
+                current but are more stable with varying loads.
+            </p>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="series-resistance.html" class="btn-secondary">Calculate Series Resistance</a>
+            <a href="parallel-resistance.html" class="btn-secondary">Calculate Parallel Resistance</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="voltage-divider.js"></script>
+</body>
+</html>

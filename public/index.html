@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhmLab - Fast Resistor & Electronics Calculators for Students</title>
+    <meta name="description" content="Free physics and electronics resistance calculators for students. Calculate resistor color codes, series, parallel resistance and voltage dividers.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to OhmLab</h1>
+            <p class="tagline">Fast resistor & electronics calculators for students</p>
+            <p class="hero-description">
+                Master resistance calculations with our easy-to-use tools. Perfect for physics students,
+                electronics learners, and anyone studying electrical circuits. Get instant, accurate results
+                with clear explanations.
+            </p>
+        </section>
+
+        <div class="ad-container">
+            <div class="ad-placeholder">Advertisement Space</div>
+        </div>
+
+        <section class="calculators-grid">
+            <div class="calculator-card">
+                <div class="card-icon">🎨</div>
+                <h2>Resistor Color Code</h2>
+                <p>Decode 4-band and 5-band resistor color codes instantly. Learn the color values and tolerance ratings.</p>
+                <a href="resistor-color-code.html" class="btn-primary">Open Calculator</a>
+            </div>
+
+            <div class="calculator-card">
+                <div class="card-icon">➕</div>
+                <h2>Series Resistance</h2>
+                <p>Calculate total resistance when resistors are connected in series. Add multiple resistors easily.</p>
+                <a href="series-resistance.html" class="btn-primary">Open Calculator</a>
+            </div>
+
+            <div class="calculator-card">
+                <div class="card-icon">🔀</div>
+                <h2>Parallel Resistance</h2>
+                <p>Find equivalent resistance for parallel circuits. Supports unlimited resistor inputs.</p>
+                <a href="parallel-resistance.html" class="btn-primary">Open Calculator</a>
+            </div>
+
+            <div class="calculator-card">
+                <div class="card-icon">⚡</div>
+                <h2>Voltage Divider</h2>
+                <p>Calculate output voltage in voltage divider circuits. Essential for circuit design.</p>
+                <a href="voltage-divider.html" class="btn-primary">Open Calculator</a>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Who Is OhmLab For?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Physics Students</h3>
+                    <p>Perfect for high school and college students learning electrical circuits and resistance concepts.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Electronics Learners</h3>
+                    <p>Great for hobbyists and beginners exploring electronics projects and circuit design.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Quick Reference</h3>
+                    <p>Fast, accurate calculations when you need to verify homework or lab work.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="disclaimer-section">
+            <h2>Educational Purpose</h2>
+            <p>
+                OhmLab is designed as a learning tool for students and educators. All calculators are provided
+                for educational purposes to help understand resistance concepts. While we strive for accuracy,
+                please verify critical calculations and always follow proper safety procedures when working with
+                electrical circuits.
+            </p>
+        </section>
+
+        <div class="ad-container">
+            <div class="ad-placeholder">Advertisement Space</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

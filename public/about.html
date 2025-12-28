@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - OhmLab</title>
+    <meta name="description" content="Learn about OhmLab's mission to help physics students understand electronics clearly through accurate and simple calculators.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resistor-color-code.html">Resistor Color Code Calculator</a>
+            <a href="series-resistance.html">Series Resistance Calculator</a>
+            <a href="parallel-resistance.html">Parallel Resistance Calculator</a>
+            <a href="voltage-divider.html">Voltage Divider Calculator</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="source-download.html" class="temp-link">Source Code (Temp)</a>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">OhmLab</div>
+    </header>
+
+    <main>
+        <div class="legal-page">
+            <h1>About OhmLab</h1>
+
+            <h2>Our Mission</h2>
+            <p>
+                OhmLab was created with a simple mission: to help physics and electronics students understand
+                resistance concepts clearly and accurately. We believe that learning should be accessible,
+                straightforward, and supported by reliable tools.
+            </p>
+
+            <h2>What We Offer</h2>
+            <p>
+                We provide a suite of free calculators designed specifically for students learning about
+                electrical circuits and resistance. Our tools include:
+            </p>
+            <ul>
+                <li><strong>Resistor Color Code Calculator</strong> - Decode 4-band and 5-band resistor values</li>
+                <li><strong>Series Resistance Calculator</strong> - Calculate total resistance in series circuits</li>
+                <li><strong>Parallel Resistance Calculator</strong> - Find equivalent resistance in parallel circuits</li>
+                <li><strong>Voltage Divider Calculator</strong> - Determine output voltages in divider circuits</li>
+            </ul>
+
+            <h2>Educational Purpose</h2>
+            <p>
+                All calculators and information on OhmLab are provided for educational purposes only.
+                We strive for accuracy in all our calculations and explanations, helping students verify
+                their homework, understand concepts, and learn by doing.
+            </p>
+
+            <h2>Our Approach</h2>
+            <p>
+                We focus on three key principles:
+            </p>
+            <ul>
+                <li><strong>Accuracy:</strong> Every calculator uses correct formulas and provides reliable results</li>
+                <li><strong>Simplicity:</strong> Clean, easy-to-use interfaces that don't overwhelm</li>
+                <li><strong>Education:</strong> Clear explanations that help you understand the concepts, not just get answers</li>
+            </ul>
+
+            <h2>Who We Serve</h2>
+            <p>
+                OhmLab is designed for:
+            </p>
+            <ul>
+                <li>High school physics students learning about electricity</li>
+                <li>College students studying electrical engineering</li>
+                <li>Electronics hobbyists and makers</li>
+                <li>Teachers looking for reliable tools for demonstrations</li>
+                <li>Anyone curious about how electronic components work</li>
+            </ul>
+
+            <h2>About the Creator</h2>
+            <p>
+                OhmLab is created and maintained by <strong>Ajmal Ali A</strong>, based in Kerala, India.
+                As an individual passionate about education and technology, the goal is to provide
+                quality learning resources that make physics and electronics more accessible to students everywhere.
+            </p>
+
+            <h2>Free and Accessible</h2>
+            <p>
+                All calculators on OhmLab are completely free to use. There are no accounts required,
+                no paywalls, and no hidden fees. Our commitment is to keep these tools accessible to
+                all students, regardless of their location or resources.
+            </p>
+
+            <h2>Continuous Improvement</h2>
+            <p>
+                We're committed to maintaining and improving OhmLab. If you have suggestions, find errors,
+                or would like to see additional features, please don't hesitate to reach out through our
+                <a href="contact.html" style="color: var(--primary-color);">contact page</a>.
+            </p>
+
+            <h2>Accuracy Commitment</h2>
+            <p>
+                While we make every effort to ensure all calculations are accurate and reliable, we always
+                recommend verifying critical calculations, especially for projects involving safety or
+                expensive components. See our <a href="disclaimer.html" style="color: var(--primary-color);">disclaimer</a>
+                for more information.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OhmLab</h4>
+                <p>Fast resistor & electronics calculators for students</p>
+                <p class="owner">Created by Ajmal Ali A</p>
+            </div>
+            <div class="footer-section">
+                <h4>Calculators</h4>
+                <a href="resistor-color-code.html">Resistor Color Code</a>
+                <a href="series-resistance.html">Series Resistance</a>
+                <a href="parallel-resistance.html">Parallel Resistance</a>
+                <a href="voltage-divider.html">Voltage Divider</a>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OhmLab. All rights reserved. | Kerala, India</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>
