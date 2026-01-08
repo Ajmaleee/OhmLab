@@ -43,10 +43,6 @@ function Home() {
         </p>
       </section>
 
-      <div className="bg-white rounded-xl shadow-md p-8 border-2 border-dashed border-gray-300">
-        <p className="text-center text-gray-500 text-lg">Advertisement Space</p>
-      </div>
-
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {calculators.map((calc) => {
           const Icon = calc.icon;
@@ -108,10 +104,6 @@ function Home() {
           electrical circuits.
         </p>
       </section>
-
-      <div className="bg-white rounded-xl shadow-md p-8 border-2 border-dashed border-gray-300">
-        <p className="text-center text-gray-500 text-lg">Advertisement Space</p>
-      </div>
     </div>
   );
 }
