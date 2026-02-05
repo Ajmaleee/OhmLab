@@ -5,8 +5,9 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voltage Divider Calculator - OhmLab</title>
-    <meta name="description" content="Calculate output voltage in voltage divider circuits. Essential tool for circuit design and analysis.">
+    <title>Voltage Divider Calculator | OhmLab</title>
+    <meta name="description" content="Use OhmLab's voltage divider calculator to find output voltage, understand resistor behavior, and apply Ohm's Law in circuit design.">
+    <link rel="canonical" href="https://ohmlab.pages.dev/voltage-divider.html">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -73,6 +74,13 @@
         </div>
 
         <div class="explanation-section">
+            <h2>Summary</h2>
+            <p>
+                This voltage divider calculator helps you choose resistor values, predict output voltage, and
+                apply Ohm's Law to current flow. Resistors work by limiting current and creating predictable
+                voltage drops.
+            </p>
+
             <h2>Understanding Voltage Dividers</h2>
 
             <h3>What is a Voltage Divider?</h3>
@@ -129,6 +137,30 @@
                 For most applications, resistor values between 1kΩ and 100kΩ work well. Higher values
                 reduce power consumption but can be more susceptible to noise. Lower values draw more
                 current but are more stable with varying loads.
+            </p>
+
+            <h3>Design Tips</h3>
+            <p>
+                If your voltage divider feeds a microcontroller or sensor input, confirm the input impedance
+                so it does not load the divider. Use this voltage divider calculator to test multiple
+                resistor values and keep V<sub>out</sub> within safe limits.
+            </p>
+
+            <h3>Learning Goals</h3>
+            <ul>
+                <li>Translate the voltage divider formula into real component values</li>
+                <li>Understand how V<sub>in</sub>, R<sub>1</sub>, and R<sub>2</sub> interact</li>
+                <li>Build intuition for voltage scaling in electronics projects</li>
+            </ul>
+
+            <h3>Resistor History & Divider Fun Facts</h3>
+            <p>
+                The voltage divider is one of the oldest circuit tricks in electronics, used long before
+                solid-state regulators were common. Early radio designers relied on divider networks to
+                bias vacuum tubes at precise operating points. Fun fact: some vintage equipment used large
+                wire-wound resistors as dividers, and they got warm enough to act like tiny heaters. Today,
+                the same principle helps scale signals for microcontrollers and sensors, proving how a
+                simple resistor pair can solve modern measurement problems with Ohm's Law.
             </p>
         </div>
 
