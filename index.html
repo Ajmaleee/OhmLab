@@ -1,32 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1BBZY4ZJLW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1BBZY4ZJLW');
-</script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BBZY4ZJLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1BBZY4ZJLW');
+    </script>
     <meta name="google-site-verification" content="cJOirbfsFuMeRRtCq3G9SyQtf0XY58iZV5zO4hc1dnY" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330488077866990"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OhmLab - Fast Resistor & Electronics Calculators for Students</title>
+    <title>OhmLab - Free Resistor & Electronics Calculator Tools</title>
+    <meta name="description" content="Free online resistor calculators. Calculate color codes, series resistance, parallel resistance, voltage dividers. Perfect for students and electronics learners." />
     <meta property="og:image" content="https://bolt.new/static/og_default.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="app-container">
+      <div id="header"></div>
+      <main id="main" class="main-content"></main>
+      <div id="footer"></div>
+    </div>
+    <script src="/navigation.js"></script>
+    <script src="/pages/home.js"></script>
   </body>
 </html>
