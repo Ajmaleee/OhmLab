@@ -216,11 +216,76 @@ function renderResistorColorCode() {
           Resistance = 10 &times; 100 = <strong>1,000Ω or 1kΩ ±5%</strong>
         </p>
       </div>
+      <div>
+        <h3>A Second Example: 5-Band Resistor</h3>
+        <p>
+          A resistor with bands: <strong>Red, Violet, Black, Brown, Brown</strong><br />
+          Red = 2, Violet = 7, Black = 0, Brown = &times;10, Brown = ±1%<br />
+          Resistance = 270 &times; 10 = <strong>2,700Ω or 2.7kΩ ±1%</strong><br />
+          Five-band resistors add a third digit before the multiplier, giving finer resolution
+          than the two-digit precision of a 4-band resistor.
+        </p>
+      </div>
+      <div>
+        <h3>How to Find the Right Reading Direction</h3>
+        <p>
+          One of the trickiest parts of reading color codes is knowing which end to start from.
+          The tolerance band (usually gold, silver, brown, or red) is often spaced slightly apart
+          from the other bands, so it should be read last, on the right-hand side. If you're
+          unsure, try reading the code both ways — one direction should give a "clean," commonly
+          manufactured resistance value, while the reverse direction usually produces an unlikely
+          or non-standard number.
+        </p>
+      </div>
+      <div>
+        <h3>Standard Resistor Value Series (E-Series)</h3>
+        <p>
+          Resistors aren't manufactured in every possible value — they follow standardized series
+          such as E12, E24, E48, E96, and E192, where the number indicates how many value "steps"
+          exist per decade (per multiple of 10). The E12 series, common for general-purpose ±10%
+          resistors, includes values like 10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, and 82 (and
+          their multiples, such as 100, 120, 150...). Higher-precision resistors use the denser
+          E96 or E192 series to support tighter tolerances like ±1% or ±0.1%.
+        </p>
+      </div>
+      <div>
+        <h3>SMD Resistor Codes</h3>
+        <p>
+          Surface-mount resistors are usually too small for painted color bands, so they use a
+          printed numeric code instead. A 3-digit code works like the color bands: the first two
+          digits are significant figures and the third is the power-of-ten multiplier (for
+          example, "472" means 47 &times; 10² = 4,700Ω, or 4.7kΩ). A 4-digit code is used for
+          tighter-tolerance resistors, with three significant digits followed by the multiplier.
+          Some ultra-precision or very small chip resistors use an EIA-96 alphanumeric code
+          instead, combining a 2-digit lookup number with a letter for the multiplier.
+        </p>
+      </div>
+      <div>
+        <h3>Common Mistakes to Avoid</h3>
+        <ul>
+          <li>Reading the bands in the wrong direction, which produces an incorrect resistance value</li>
+          <li>Confusing gold and silver as digit colors instead of multiplier/tolerance colors</li>
+          <li>Forgetting that a missing tolerance band implies ±20%, not zero tolerance</li>
+          <li>Misreading similar-looking colors under poor lighting, such as brown vs red, or blue vs violet</li>
+          <li>Assuming all resistors use bands — many modern surface-mount resistors use printed numeric codes instead</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Key Points</h3>
+        <ul>
+          <li>4-band resistors encode 2 significant digits, a multiplier, and a tolerance</li>
+          <li>5-band (and 6-band) resistors add a third significant digit for finer precision</li>
+          <li>The tolerance band is read last and is usually spaced apart from the rest</li>
+          <li>Resistor values follow standardized E-series steps rather than arbitrary numbers</li>
+          <li>Surface-mount resistors typically use printed numeric codes instead of color bands</li>
+        </ul>
+      </div>
     </div>
 
     <div class="nav-buttons">
       <a href="/series-resistance" class="btn-cyan">Calculate Series Resistance</a>
       <a href="/parallel-resistance" class="btn-cyan">Try Parallel Resistance Calculator</a>
+      <a href="/resistor-guide" class="btn-cyan">Read the Full Resistor Guide</a>
     </div>
   `;
 

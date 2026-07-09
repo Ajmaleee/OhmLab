@@ -4,6 +4,7 @@ const NAV_LINKS = [
   { path: '/series-resistance', label: 'Series Resistance Calculator' },
   { path: '/parallel-resistance', label: 'Parallel Resistance Calculator' },
   { path: '/voltage-divider', label: 'Voltage Divider Calculator' },
+  { path: '/resistor-guide', label: 'Resistor Guide' },
   { path: '/about', label: 'About Us' },
   { path: '/contact', label: 'Contact Us' },
 ];
@@ -16,6 +17,7 @@ const FOOTER_CALC_LINKS = [
 ];
 
 const FOOTER_INFO_LINKS = [
+  { path: '/resistor-guide', label: 'Resistor Guide' },
   { path: '/about', label: 'About Us' },
   { path: '/contact', label: 'Contact Us' },
   { path: '/privacy-policy', label: 'Privacy Policy' },

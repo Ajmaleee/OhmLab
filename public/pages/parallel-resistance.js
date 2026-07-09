@@ -109,9 +109,11 @@ function renderParallelResistance() {
       <div>
         <h3>What is Parallel Connection?</h3>
         <p>
-          When resistors are connected in parallel, they are connected across the same two points,
-          creating multiple paths for current to flow. The voltage across all resistors is the same,
-          but current divides among them.
+          When resistors are connected in parallel, both ends of every resistor are tied to the same two
+          points in the circuit, creating multiple independent paths for current to flow. Because every
+          resistor shares the same two nodes, the voltage across all of them is identical, but the total
+          current from the source splits and flows through each branch in inverse proportion to its
+          resistance — the lowest-resistance path carries the most current.
         </p>
       </div>
       <div>
@@ -123,23 +125,75 @@ function renderParallelResistance() {
         <p class="formula-display">
           R<sub>total</sub> = (R<sub>1</sub> × R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)
         </p>
+        <p>
+          The two-resistor shortcut — often called the "product over sum" rule — is faster than the
+          reciprocal formula when you're only working with a pair of resistors, but for three or more
+          resistors you'll need the full reciprocal sum.
+        </p>
+      </div>
+      <div>
+        <h3>Step-by-Step Calculation Guide</h3>
+        <p>
+          <strong>Step 1:</strong> Take the reciprocal (1 ÷ value) of every resistor in the group.<br />
+          <strong>Step 2:</strong> Add all the reciprocals together.<br />
+          <strong>Step 3:</strong> Take the reciprocal of that sum to get the total equivalent resistance.<br />
+          <strong>Step 4:</strong> Double-check your answer — it should always be smaller than the
+          smallest individual resistor in the group.
+        </p>
       </div>
       <div>
         <h3>Example Calculation</h3>
         <p>
           Two resistors: 100Ω and 200Ω in parallel:<br />
           R<sub>total</sub> = (100 × 200) / (100 + 200) = 20000 / 300 = <strong>66.67Ω</strong><br />
-          Notice the result is less than the smallest resistor!
+          Notice the result is less than the smallest resistor! This happens because every additional
+          parallel path gives current an easier route, lowering the overall opposition to flow.
+        </p>
+      </div>
+      <div>
+        <h3>Special Case: Equal Resistors</h3>
+        <p>
+          When N identical resistors of value R are connected in parallel, the shortcut formula
+          R<sub>total</sub> = R / N applies. For example, four 100Ω resistors in parallel give
+          100 / 4 = <strong>25Ω</strong>, without needing the full reciprocal calculation.
+        </p>
+      </div>
+      <div>
+        <h3>Real-World Applications</h3>
+        <ul>
+          <li>Household electrical wiring, where outlets are wired in parallel so each device gets full voltage</li>
+          <li>Combining standard resistor values to approximate a non-standard resistance</li>
+          <li>Current-sharing networks in power distribution and battery packs</li>
+          <li>Building redundancy into circuits so one component failing doesn't stop everything</li>
+          <li>Shunt resistors used for current sensing in parallel with a measurement path</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Common Mistakes to Avoid</h3>
+        <ul>
+          <li>Forgetting to take the final reciprocal after summing 1/R values</li>
+          <li>Assuming parallel resistance is a simple average — it isn't</li>
+          <li>Using the "product over sum" shortcut with more than two resistors (it only works for exactly two)</li>
+          <li>Overlooking that current, not voltage, is what divides between parallel branches</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Series vs Parallel: Quick Comparison</h3>
+        <p>
+          Parallel resistance always decreases as more resistors are added, the opposite of
+          <a href="/series-resistance">series circuits</a>, where resistance always increases. Parallel
+          circuits are also more fault-tolerant: if one branch opens, current keeps flowing through the
+          remaining paths, whereas a single break in a series circuit stops everything.
         </p>
       </div>
       <div>
         <h3>Key Points</h3>
         <ul>
           <li>Total resistance always decreases in parallel</li>
-          <li>Result is always less than the smallest resistor</li>
+          <li>Result is always less than the smallest individual resistor</li>
           <li>Voltage is the same across all resistors</li>
-          <li>Current divides among the paths</li>
-          <li>If one component fails, others still work</li>
+          <li>Current divides among the paths in inverse proportion to resistance</li>
+          <li>If one branch fails open, the others continue to work</li>
         </ul>
       </div>
     </div>
