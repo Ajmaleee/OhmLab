@@ -196,11 +196,110 @@ function renderParallelResistance() {
           <li>If one branch fails open, the others continue to work</li>
         </ul>
       </div>
+      <div>
+        <h3>Why the Reciprocal Formula Works</h3>
+        <p>
+          The parallel resistance formula looks intimidating at first, but it follows directly from
+          Ohm's Law once you notice that every resistor in a parallel group shares the exact same
+          voltage across it — they're all connected between the same two nodes. Since each resistor's
+          current is I = V / R, the total current drawn from the source is simply the sum of each
+          branch's individual current: I<sub>total</sub> = V/R₁ + V/R₂ + V/R₃ + ... Factoring out the
+          shared voltage V gives I<sub>total</sub> = V × (1/R₁ + 1/R₂ + 1/R₃ + ...). Comparing this to
+          Ohm's Law for a single equivalent resistor, I<sub>total</sub> = V / R<sub>total</sub>, shows
+          that 1/R<sub>total</sub> must equal 1/R₁ + 1/R₂ + 1/R₃ + ... — which is exactly the reciprocal
+          formula every parallel resistance calculator uses. In short: resistors in parallel add up as
+          conductances (the reciprocal of resistance), not as resistances directly, because it's the
+          current paths that are being combined, not the resistive elements themselves.
+        </p>
+      </div>
+      <div>
+        <h3>Worked Example: Combining Three Unequal Resistors</h3>
+        <p>
+          Suppose you have three resistors in parallel: R₁ = 100Ω, R₂ = 200Ω, and R₃ = 300Ω.
+          1/R<sub>total</sub> = 1/100 + 1/200 + 1/300 = 0.01 + 0.005 + 0.00333 = 0.01833.
+          R<sub>total</sub> = 1 / 0.01833 ≈ <strong>54.5Ω</strong>. Notice that the result, 54.5Ω, is
+          smaller than even the smallest individual resistor (100Ω) — this is a defining, sometimes
+          counterintuitive property of parallel circuits: adding more resistive paths, no matter how
+          large each new resistor is, can only ever lower or maintain the total resistance, never raise
+          it.
+        </p>
+      </div>
+      <div>
+        <h3>Current Divider Rule</h3>
+        <p>
+          Just as a series circuit has a voltage divider rule, a parallel circuit has a current divider
+          rule: the current through any one branch is inversely proportional to its resistance relative
+          to the others. For two resistors in parallel, the current through R₁ can be found directly
+          with I₁ = I<sub>total</sub> × R₂ / (R₁ + R₂) — notice that it's the *other* resistor's value
+          that appears in the numerator, the mirror image of the voltage divider formula. This means the
+          branch with the lowest resistance always carries the most current, since it offers the "path
+          of least resistance" for charge to flow through, while high-resistance branches carry
+          proportionally less.
+        </p>
+      </div>
+      <div>
+        <h3>Power Distribution Across Parallel Branches</h3>
+        <p>
+          Because every resistor in a parallel group shares the same voltage, the power each one
+          dissipates is most easily calculated with P = V² / R. This means, somewhat counterintuitively,
+          that the *smallest* resistance value in a parallel group dissipates the *most* power, since a
+          smaller R in the denominator produces a larger result for a fixed voltage. This is an important
+          safety consideration in circuits like parallel LED strings or parallel battery packs, where
+          the lowest-resistance path can end up carrying a disproportionate — sometimes dangerous —
+          share of the total current and power if the branches aren't well matched.
+        </p>
+      </div>
+      <div>
+        <h3>Household Wiring: A Real-World Parallel Circuit</h3>
+        <p>
+          The electrical wiring in most homes is a practical, everyday example of a parallel circuit.
+          Every outlet, light fixture, and appliance is connected in parallel across the same supply
+          voltage (120V or 230V depending on region), which is precisely why turning off one lamp
+          doesn't turn off every other device in the house, and why plugging in an additional appliance
+          doesn't change the voltage available to everything else already running. This parallel wiring
+          also explains why circuit breakers monitor total current rather than voltage — as more devices
+          are switched on, more parallel paths are added, the combined resistance of the household
+          circuit drops, and the total current drawn increases, which is exactly the condition a breaker
+          is designed to detect and interrupt if it becomes excessive.
+        </p>
+      </div>
+      <div>
+        <h3>Frequently Asked Questions</h3>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Why is parallel resistance always smaller than every individual resistor?</h4>
+        <p>
+          Adding a resistor in parallel always creates an additional path for current to flow, and more
+          available paths can only make it easier — never harder — for current to get through overall,
+          which is the same as saying the total resistance can only go down or stay the same.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">What happens if I put a 0Ω (short circuit) in parallel with another resistor?</h4>
+        <p>
+          The total resistance becomes 0Ω, since a short circuit provides an essentially unrestricted
+          path for current, bypassing the other resistor(s) entirely. This is also why an accidental
+          short in one parallel branch can cause dangerously high current draw across the whole circuit.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Is there a shortcut for two equal resistors in parallel?</h4>
+        <p>
+          Yes — two identical resistors in parallel always combine to exactly half the value of one of
+          them. More generally, N identical resistors in parallel combine to 1/N of a single resistor's
+          value.
+        </p>
+      </div>
+      <div>
+        <h3>Glossary of Terms</h3>
+        <ul>
+          <li><strong>Parallel circuit:</strong> a circuit where components share the same two connection nodes, giving current multiple paths</li>
+          <li><strong>Conductance:</strong> the reciprocal of resistance (measured in siemens), which adds directly for parallel resistors</li>
+          <li><strong>Current divider:</strong> the rule describing how total current splits among parallel branches</li>
+          <li><strong>Branch:</strong> one individual resistive path within a parallel network</li>
+          <li><strong>Short circuit:</strong> a near-zero resistance path that can dominate a parallel network's behavior</li>
+        </ul>
+      </div>
     </div>
 
     <div class="nav-buttons">
       <a href="/series-resistance" class="btn-cyan">Calculate Series Resistance</a>
       <a href="/resistor-color-code" class="btn-cyan">Decode Resistor Color Codes</a>
+      <a href="/resistor-guide" class="btn-cyan">Read the Full Resistor Guide</a>
     </div>
   `;
 

@@ -196,7 +196,94 @@
             </section>
 
             <section>
-              <h2>Quick Facts</h2>
+              <h2>How Resistors Are Manufactured</h2>
+              <p>
+                The manufacturing process differs by resistor type, but film resistors — by far the
+                most common today — follow a broadly similar path. A ceramic rod or chip substrate is
+                coated with a thin layer of resistive material, such as carbon or a metal alloy, through
+                vacuum deposition or sputtering. A laser or mechanical cutter then engraves a precise
+                helical groove through this resistive layer, effectively lengthening the electrical path
+                and fine-tuning the resistance to a target value — this is why film resistors can be
+                trimmed to tight tolerances after the coating step, rather than needing a perfectly
+                calibrated deposition every time. Metal end caps or leads are attached, the whole
+                component is coated with a protective, insulating lacquer, and finally the color bands
+                (or printed numeric code, for SMD parts) are applied before the resistor is tested and
+                packaged for shipment.
+              </p>
+            </section>
+            <section>
+              <h2>Standards Organizations Behind Resistor Specifications</h2>
+              <p>
+                Several international bodies maintain the standards that make resistors from different
+                manufacturers interchangeable and predictable. The International Electrotechnical
+                Commission (IEC) publishes IEC 60062, which defines the color coding and marking system
+                used worldwide. The Electronic Industries Alliance (EIA), a U.S.-based standards body,
+                defines the E-series preferred value system (E12, E24, E96, etc.) used to standardize
+                which resistance values are actually manufactured. Regional and national bodies — such
+                as JIS in Japan or various national adaptations of IEC standards — largely align with
+                these international frameworks, which is part of why a resistor bought from a supplier
+                in one country behaves predictably when used in a design created in another.
+              </p>
+            </section>
+            <section>
+              <h2>Testing a Resistor with a Multimeter</h2>
+              <p>
+                Verifying a resistor's actual value is straightforward with a digital multimeter set to
+                resistance (ohms) mode. First, remove or isolate the resistor from the circuit if
+                possible, since other components in a live circuit can create parallel paths that skew
+                the reading. Touch the two probes to each end of the resistor — polarity doesn't matter,
+                since resistors aren't directional — and read the displayed value. Compare this measured
+                value against the resistor's color-coded or printed nominal value; a healthy resistor
+                should read within its stated tolerance band. A reading of infinite resistance (often
+                shown as "OL" or "1") usually indicates a burned-out or open resistor, while a reading of
+                zero or near-zero suggests an internal short, both of which mean the component should be
+                replaced.
+              </p>
+            </section>
+            <section>
+              <h2>Resistors vs Other Passive Components</h2>
+              <p>
+                Resistors belong to a broader family of passive components that also includes capacitors
+                and inductors, and understanding how they differ helps clarify why resistors are used
+                where they are. A resistor opposes current flow and dissipates energy as heat regardless
+                of frequency, making it suitable for current limiting, voltage division, and biasing. A
+                capacitor stores energy in an electric field and blocks steady DC current while passing
+                AC signals, making it useful for filtering and timing. An inductor stores energy in a
+                magnetic field and resists sudden changes in current, useful in power supplies and RF
+                circuits. Many real circuits — filters, oscillators, power regulators — combine all
+                three, using each component's distinct behavior to shape how a circuit responds to
+                different signals over time.
+              </p>
+            </section>
+            <section>
+              <h2>Environmental Considerations and RoHS Compliance</h2>
+              <p>
+                Modern resistor manufacturing is governed by environmental regulations such as the
+                European Union's RoHS (Restriction of Hazardous Substances) directive, which limits the
+                use of materials like lead, cadmium, and certain flame retardants in electronic
+                components. Older resistors sometimes used leaded solder coatings on their terminals;
+                RoHS-compliant resistors use lead-free alternatives instead. Because resistors are
+                produced in such enormous volumes — many billions of units annually worldwide —
+                manufacturers have also increasingly focused on reducing energy use and material waste
+                during production, and on ensuring components can be more easily recycled at the end of
+                a product's life.
+              </p>
+            </section>
+            <section>
+              <h2>Choosing the Right Resistor for a Project</h2>
+              <p>
+                Selecting an appropriate resistor involves more than just picking the right resistance
+                value. Consider the required power rating based on expected current and voltage, the
+                tolerance needed for your application's precision requirements, the temperature
+                coefficient if the circuit will experience significant temperature swings, and the
+                physical package — through-hole for prototyping and hand assembly, or surface-mount for
+                compact, production-scale designs. For general hobbyist projects, a standard ±5% metal
+                film resistor rated at 1/4W is usually more than sufficient; precision instrumentation,
+                audio equipment, or safety-critical designs typically call for tighter-tolerance metal
+                film or wirewound resistors instead.
+              </p>
+            </section>
+
               <ul>
                 <li>The ohm (Ω) is named after Georg Simon Ohm, who formalized Ohm's Law in 1827</li>
                 <li>The resistor color code was standardized to make quick visual identification of value and tolerance possible without markings that could wear off</li>

@@ -187,11 +187,111 @@ function renderSeriesResistance() {
           <li>Resistors can be added in any order — the total is unaffected by sequence</li>
         </ul>
       </div>
+      <div>
+        <h3>Why Resistance Simply Adds in Series</h3>
+        <p>
+          It can feel like a formula to memorize, but the reason total resistance in a series circuit
+          is just the sum of the individual resistances follows directly from Ohm's Law. Because the
+          same current I flows through every resistor in a series chain — there's no other path for it
+          to take — the total voltage dropped across the whole chain is V<sub>total</sub> = I×R₁ + I×R₂
+          + I×R₃ + ... By factoring out the common current I, this becomes V<sub>total</sub> = I × (R₁ +
+          R₂ + R₃ + ...), which is exactly the same form as Ohm's Law for a single equivalent resistor:
+          V<sub>total</sub> = I × R<sub>total</sub>. That's the entire proof — R<sub>total</sub> must
+          equal R₁ + R₂ + R₃ + ... because that's the only way the equation stays consistent. Every
+          series resistance calculator, including this one, is really just automating this simple
+          algebraic step.
+        </p>
+      </div>
+      <div>
+        <h3>Worked Example: Designing a Current-Limiting Resistor for an LED</h3>
+        <p>
+          One of the most common uses of series resistance math is sizing a current-limiting resistor
+          for an LED. Suppose you're powering a standard red LED (forward voltage of about 2V, desired
+          current of 20mA) from a 9V battery. The resistor needs to drop the remaining voltage:
+          9V − 2V = 7V. Using Ohm's Law, R = V / I = 7V / 0.02A = <strong>350Ω</strong>. Since 350Ω
+          isn't a standard value, you'd round up to the nearest common resistor, 360Ω or 390Ω, to keep
+          the current safely at or slightly below the LED's rated maximum. This is a textbook
+          application of series-circuit thinking: the battery, the resistor, and the LED are all part
+          of one loop carrying the same current, and the resistor's job is purely to "absorb" the
+          leftover voltage the LED doesn't need.
+        </p>
+      </div>
+      <div>
+        <h3>Power Dissipation in Series Resistors</h3>
+        <p>
+          Each resistor in a series chain dissipates its own share of power as heat, calculated with
+          P = I² × R, where I is the shared circuit current. Because current is identical through every
+          resistor, the resistor with the highest resistance value in the chain will dissipate the most
+          power and run the hottest. This matters when selecting a resistor's power rating (commonly
+          1/8W, 1/4W, 1/2W, 1W, or higher) — undersizing a resistor's power rating in a series circuit
+          can cause it to overheat, drift in value, or fail outright, even though the current itself
+          might seem modest.
+        </p>
+      </div>
+      <div>
+        <h3>Combining Series Resistance with Other Configurations</h3>
+        <p>
+          Real circuits rarely use pure series or pure parallel arrangements exclusively — most use a
+          combination, often called a series-parallel or "mixed" network. To analyze these, engineers
+          typically simplify the circuit step by step: first combine any purely parallel groups into a
+          single equivalent resistance using the <a href="/parallel-resistance">parallel resistance
+          formula</a>, then add that equivalent resistance in series with any remaining series
+          resistors, repeating the process until the entire network collapses into one final value.
+          This step-by-step reduction technique is one of the very first skills taught in any circuit
+          analysis course, precisely because so many real-world circuits — from simple LED arrays to
+          complex sensor networks — boil down to nested series and parallel groups.
+        </p>
+      </div>
+      <div>
+        <h3>Tolerance Stacking in Series Circuits</h3>
+        <p>
+          Every resistor has a manufacturing tolerance — commonly ±5% or ±1% — meaning its actual value
+          may differ slightly from its labeled value. When resistors are combined in series, these small
+          individual errors partially average out rather than simply adding together at their worst
+          case, though for a conservative worst-case design estimate, engineers sometimes do add
+          tolerances directly to determine the absolute maximum and minimum possible total resistance.
+          For precision applications, using resistors from the same batch, or specifying tighter
+          tolerance parts (±1% or better), keeps the combined uncertainty of a series network
+          predictable and small.
+        </p>
+      </div>
+      <div>
+        <h3>Frequently Asked Questions</h3>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Does the order of resistors in a series circuit matter?</h4>
+        <p>
+          No — the total resistance, current, and power delivered by the source are identical no matter
+          what order the resistors are physically placed in. Only the individual voltage drop at each
+          specific point in the chain changes depending on position.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">What happens if one resistor in a series chain is much larger than the others?</h4>
+        <p>
+          It dominates the total resistance and will drop the vast majority of the available voltage,
+          while the smaller resistors contribute comparatively little to either the total resistance or
+          their own voltage drop.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Can series resistance ever be lower than the smallest individual resistor?</h4>
+        <p>
+          No. Because resistances simply add together in series, the total is always greater than or
+          equal to the single largest resistor in the chain — this is the opposite of how parallel
+          resistance behaves.
+        </p>
+      </div>
+      <div>
+        <h3>Glossary of Terms</h3>
+        <ul>
+          <li><strong>Series circuit:</strong> a circuit where components are connected end-to-end, forming a single path for current</li>
+          <li><strong>Equivalent resistance:</strong> a single resistance value that behaves identically to a group of resistors combined</li>
+          <li><strong>Voltage drop:</strong> the portion of total voltage consumed by a single component in a circuit</li>
+          <li><strong>Power rating:</strong> the maximum power a resistor can safely dissipate as heat</li>
+          <li><strong>Tolerance:</strong> the manufacturing accuracy of a resistor's stated value, usually given as a percentage</li>
+        </ul>
+      </div>
     </div>
 
     <div class="nav-buttons">
       <a href="/parallel-resistance" class="btn-cyan">Calculate Parallel Resistance</a>
       <a href="/voltage-divider" class="btn-cyan">Try Voltage Divider Calculator</a>
+      <a href="/resistor-guide" class="btn-cyan">Read the Full Resistor Guide</a>
     </div>
   `;
 

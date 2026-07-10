@@ -280,6 +280,117 @@ function renderResistorColorCode() {
           <li>Surface-mount resistors typically use printed numeric codes instead of color bands</li>
         </ul>
       </div>
+      <div>
+        <h3>The Full Color Code Reference Table</h3>
+        <p>
+          Every band color maps to a specific digit, multiplier, or tolerance depending on its
+          position. Here is the complete reference used by every calculator, including this one:
+        </p>
+        <p>
+          <strong>Black</strong> = 0, ×1 &nbsp;|&nbsp;
+          <strong>Brown</strong> = 1, ×10, ±1% &nbsp;|&nbsp;
+          <strong>Red</strong> = 2, ×100, ±2% &nbsp;|&nbsp;
+          <strong>Orange</strong> = 3, ×1,000 &nbsp;|&nbsp;
+          <strong>Yellow</strong> = 4, ×10,000<br />
+          <strong>Green</strong> = 5, ×100,000, ±0.5% &nbsp;|&nbsp;
+          <strong>Blue</strong> = 6, ×1,000,000, ±0.25% &nbsp;|&nbsp;
+          <strong>Violet</strong> = 7, ×10,000,000, ±0.1% &nbsp;|&nbsp;
+          <strong>Gray</strong> = 8, ×100,000,000, ±0.05% &nbsp;|&nbsp;
+          <strong>White</strong> = 9, ×1,000,000,000<br />
+          <strong>Gold</strong> = ×0.1, ±5% &nbsp;|&nbsp;
+          <strong>Silver</strong> = ×0.01, ±10% &nbsp;|&nbsp;
+          <strong>No band</strong> = ±20%
+        </p>
+      </div>
+      <div>
+        <h3>Why Colors? A Deeper Look at the History</h3>
+        <p>
+          The resistor color code was formalized by the Radio Manufacturers Association (RMA), a
+          predecessor of today's Electronic Industries Alliance (EIA), in the 1920s, and it was later
+          adopted internationally through IEC 60062. At the time, printing readable numbers directly
+          onto a tiny cylindrical component was expensive, error-prone, and could smudge or fade with
+          heat and handling. Painted bands, by contrast, could be applied quickly during manufacturing,
+          remained legible under grease, dust, and moderate wear, and could be read from any rotational
+          angle around the resistor's body without needing to find a specific printed face. The system
+          proved so practical that it survived essentially unchanged for a century, even as the
+          resistors themselves shrank dramatically in size, and it remains the standard taught in
+          electronics education worldwide.
+        </p>
+      </div>
+      <div>
+        <h3>Memory Tricks for Learning the Sequence</h3>
+        <p>
+          Students have used mnemonic phrases for decades to remember the black-through-white digit
+          sequence (0 through 9): a classic example assigns a memorable word starting with each
+          color's first letter to build a sentence, such as associating Black with "Bad," Brown with
+          "Boys," Red with "Ravish," Orange with "Our," Yellow with "Young," Green with "Girls,"
+          Blue with "But," Violet with "Violet," Gray with "Gives," and White with "Wine" — forming a
+          nonsense sentence that's easy to memorize even if the words themselves are arbitrary. Many
+          students instead simply remember that the sequence follows the visible light spectrum order
+          (red, orange, yellow, green, blue, violet) sandwiched between black/brown at the low end and
+          gray/white at the high end, which mirrors how a rainbow progresses from long to short
+          wavelengths.
+        </p>
+      </div>
+      <div>
+        <h3>3-Band, 6-Band, and Temperature Coefficient Bands</h3>
+        <p>
+          While 4-band and 5-band resistors are by far the most common, a few variations exist. A
+          3-band resistor omits the tolerance band entirely, implying the loose ±20% default tolerance
+          — these are rarely manufactured today. A 6-band resistor adds one more stripe beyond the
+          standard 5-band layout: a temperature coefficient band, specifying how many parts-per-million
+          the resistance shifts per degree Celsius of temperature change. This is especially important
+          in precision instrumentation, where even a small temperature-driven drift in resistance can
+          throw off a sensitive measurement. Common temperature coefficient bands include brown
+          (100 ppm/°C), red (50 ppm/°C), orange (15 ppm/°C), and yellow (25 ppm/°C), with lower numbers
+          indicating a more temperature-stable resistor.
+        </p>
+      </div>
+      <div>
+        <h3>Practice Problems</h3>
+        <p>
+          Try decoding these on your own before checking the answer, then verify using the calculator
+          above:
+        </p>
+        <p>
+          <strong>1)</strong> Yellow, Violet, Orange, Gold → 47 × 1,000 = 47,000Ω (47kΩ) ±5%<br />
+          <strong>2)</strong> Green, Blue, Black, Red, Brown → 560 × 100 = 56,000Ω (56kΩ) ±1%<br />
+          <strong>3)</strong> Brown, Black, Black, Black → 10 × 1 = 10Ω ±20%<br />
+          <strong>4)</strong> Orange, Orange, Red → 33 × 100 = 3,300Ω (3.3kΩ) ±20% (no tolerance band)
+        </p>
+      </div>
+      <div>
+        <h3>Military and Aerospace Tolerance Coding</h3>
+        <p>
+          Beyond the standard consumer color code, some specialized resistors — particularly those
+          built to military specifications (MIL-SPEC) — include an additional "reliability" band that
+          indicates the failure rate level expected over 1,000 hours of operation. This is less common
+          in everyday hobbyist or consumer electronics but appears frequently in aerospace, defense, and
+          industrial control equipment where a component's long-term failure probability must be
+          documented and traceable.
+        </p>
+      </div>
+      <div>
+        <h3>Frequently Asked Questions</h3>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">What if I can't tell two colors apart, like brown and red?</h4>
+        <p>
+          Poor lighting is the most common culprit. Try viewing the resistor under bright, neutral
+          white light, or use a multimeter to measure the actual resistance and cross-check it against
+          the closest standard E-series value.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Does band width matter?</h4>
+        <p>
+          Generally no — the tolerance band is sometimes printed wider or spaced further from the
+          others purely as a visual cue for reading direction, not because it changes the value.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Can I trust the color code over a multimeter reading?</h4>
+        <p>
+          A multimeter measures the resistor's actual present resistance, which can drift slightly with
+          age, heat, or damage, while the color code shows the manufactured nominal value and tolerance.
+          For critical work, always trust a calibrated multimeter reading over the printed or painted
+          code.
+        </p>
+      </div>
     </div>
 
     <div class="nav-buttons">

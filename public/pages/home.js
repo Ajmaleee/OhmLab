@@ -155,8 +155,45 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="cta-section">
-      <h2>Get Started Today</h2>
+    <section class="content-section">
+      <h2 class="left">Understanding Ohm's Law in Depth</h2>
+      <div class="space-y-6">
+        <p>
+          Ohm's Law, expressed as V = I × R, describes the relationship between voltage (measured in
+          volts), current (measured in amperes), and resistance (measured in ohms) in an electrical
+          circuit. First published by Georg Simon Ohm in 1827, this simple equation underpins nearly
+          every calculation in electronics — from sizing a current-limiting resistor for an LED, to
+          designing a voltage divider for a sensor, to determining how much power a component will
+          dissipate as heat. The law can be rearranged three ways depending on which quantity you need
+          to solve for: V = I × R to find voltage, I = V / R to find current, and R = V / I to find
+          resistance. Many students memorize this relationship using a simple triangle diagram, with V
+          at the top and I and R at the bottom, covering the unknown quantity to reveal the correct
+          formula.
+        </p>
+        <p>
+          Ohm's Law also connects directly to electrical power through the formula P = V × I, which can
+          be combined with Ohm's Law itself to produce two more useful variations: P = I² × R and
+          P = V² / R. These power formulas are essential whenever you need to know how much heat a
+          resistor will generate, and therefore what power rating (in watts) it needs to safely handle
+          — a mismatch here is one of the most common causes of resistor failure in amateur circuit
+          designs. Together, Ohm's Law and the power law form a compact toolkit of five interrelated
+          formulas that can solve almost any basic DC circuit problem involving a single resistive
+          element.
+        </p>
+        <p>
+          It's worth noting that Ohm's Law, in its simple V = I × R form, applies directly to what
+          engineers call "ohmic" or linear components — resistors being the most common example, where
+          resistance stays constant regardless of the voltage or current applied. Many real-world
+          components, such as diodes, transistors, and light bulbs with filaments, are "non-ohmic,"
+          meaning their effective resistance changes depending on operating conditions. For these
+          components, more advanced models are needed, but the resistors covered by every calculator on
+          this site follow Ohm's Law faithfully across their entire rated operating range, which is
+          exactly what makes them such predictable, reliable building blocks for circuit design.
+        </p>
+      </div>
+    </section>
+
+
       <p>
         Choose any of our calculators above to start learning. Whether you need to decode resistor color codes, calculate equivalent resistance in complex circuits, or design voltage dividers, OhmLab provides fast, accurate results with educational explanations to help you understand the concepts behind the calculations.
       </p>

@@ -222,6 +222,115 @@ function renderVoltageDivider() {
           <li>A voltage divider is essentially a simplified case of two resistors in series, so it shares the same underlying math</li>
         </ul>
       </div>
+      <div>
+        <h3>The Physics Behind the Split</h3>
+        <p>
+          To really understand why a voltage divider behaves the way it does, it helps to go back to
+          first principles. Ohm's Law tells us that voltage across a resistor equals the current
+          flowing through it multiplied by its resistance: V = I × R. In a simple two-resistor divider,
+          both resistors are connected end-to-end with nowhere else for current to go, so exactly the
+          same current I must flow through R<sub>1</sub> and then through R<sub>2</sub>. That current is
+          fixed by the total resistance of the loop: I = V<sub>in</sub> / (R<sub>1</sub> + R<sub>2</sub>).
+          Once you know that current, the voltage dropped across R<sub>2</sub> alone is simply
+          I × R<sub>2</sub>, which is where the familiar V<sub>out</sub> = V<sub>in</sub> × R<sub>2</sub> /
+          (R<sub>1</sub> + R<sub>2</sub>) formula comes from. Every voltage divider calculation, no
+          matter how it's presented, ultimately traces back to this single idea: current is shared
+          everywhere in a series loop, but voltage is distributed according to resistance.
+        </p>
+      </div>
+      <div>
+        <h3>Thevenin Equivalent of a Voltage Divider</h3>
+        <p>
+          Engineers often need to know how a voltage divider will behave once something is connected
+          to its output, and the cleanest way to answer that is with a Thevenin equivalent circuit.
+          Viewed from the output node, a voltage divider looks exactly like a single ideal voltage
+          source (equal to the unloaded V<sub>out</sub>) in series with a single equivalent resistance,
+          known as the Thevenin resistance. For a simple two-resistor divider, that equivalent
+          resistance is R<sub>1</sub> and R<sub>2</sub> in parallel: R<sub>th</sub> = (R<sub>1</sub> ×
+          R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>). This single number tells you everything you
+          need about how "stiff" the divider is — a low Thevenin resistance means the output voltage
+          barely sags when a load is attached, while a high Thevenin resistance means even a modest
+          load current will pull the output down noticeably. This is exactly why datasheets for
+          reference-voltage circuits often specify an output impedance figure; it's really just the
+          divider's Thevenin resistance in disguise.
+        </p>
+      </div>
+      <div>
+        <h3>Worked Example: Calculating the Loading Effect</h3>
+        <p>
+          Suppose you build a divider with V<sub>in</sub> = 5V, R<sub>1</sub> = 10kΩ and R<sub>2</sub> =
+          10kΩ. Unloaded, this gives a clean V<sub>out</sub> = 2.5V. Now imagine you connect a load with
+          an input resistance of only 10kΩ across the output — the same value as R<sub>2</sub>. That
+          load resistance combines with R<sub>2</sub> in parallel to form an effective bottom resistance
+          of (10k × 10k) / (10k + 10k) = 5kΩ. Recalculating with this new effective R<sub>2</sub> gives
+          V<sub>out</sub> = 5V × (5k / (10k + 5k)) = 5V × 0.333 = <strong>1.67V</strong> — noticeably
+          lower than the 2.5V you expected. This example is a good illustration of why it's dangerous
+          to assume a divider will behave exactly as calculated once real hardware is attached to its
+          output; always compare your resistor values to the load's input impedance before finalizing a
+          design.
+        </p>
+      </div>
+      <div>
+        <h3>Voltage Dividers with Non-Resistive Elements</h3>
+        <p>
+          The two-resistor divider is the simplest case, but the same "ratio of impedances" idea
+          extends to circuits built from other components too. Replace one or both resistors with a
+          capacitor and you get a capacitive voltage divider, commonly used in high-voltage AC
+          measurement and in switched-capacitor circuits, where the ratio is based on capacitive
+          reactance instead of resistance. Replace a resistor with a photoresistor, thermistor, or
+          strain gauge, and you get a sensing voltage divider whose output voltage varies with light,
+          temperature, or mechanical strain — this is one of the most common ways to turn a simple
+          resistive sensor into a voltage signal a microcontroller's analog input can read directly.
+          Potentiometers, meanwhile, are really just a single continuous resistive element with a
+          sliding contact, functioning as an adjustable divider where turning the knob changes the
+          effective R<sub>1</sub>-to-R<sub>2</sub> ratio without changing the total resistance.
+        </p>
+      </div>
+      <div>
+        <h3>Power Dissipation in a Divider</h3>
+        <p>
+          Every voltage divider constantly burns a small amount of power as heat, even when nothing is
+          connected to its output, simply because current is always flowing through R<sub>1</sub> and
+          R<sub>2</sub> whenever V<sub>in</sub> is present. The power dissipated by each resistor can be
+          found with P = I² × R or equivalently P = V² / R, where V is the voltage dropped across that
+          particular resistor. For a 12V supply through two 1kΩ resistors, the current is 6mA, meaning
+          each resistor dissipates about 36mW — small, but not zero. In battery-powered designs where
+          every microamp matters, this constant "bleed current" is often the dominant reason engineers
+          choose much larger resistor values (hundreds of kΩ or more) for dividers that only feed a
+          high-impedance ADC input, trading a small loading error for significantly longer battery life.
+        </p>
+      </div>
+      <div>
+        <h3>Frequently Asked Questions</h3>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Can a voltage divider increase voltage above V<sub>in</sub>?</h4>
+        <p>
+          No. A simple resistive voltage divider can only ever produce an output between 0V and
+          V<sub>in</sub>. Boosting a voltage above the supply requires an active circuit, such as a
+          boost converter, rather than passive resistors.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">Why does my measured output voltage not match the calculated value?</h4>
+        <p>
+          The most common causes are the loading effect from whatever is connected to the output,
+          resistor tolerance (a ±5% resistor can be up to 5% away from its labeled value), and
+          measurement error from a multimeter that itself draws a small amount of current.
+        </p>
+        <h4 style="color: var(--gray-700); font-weight: 600; margin-top: 0.75rem;">What's the difference between a voltage divider and a potentiometer?</h4>
+        <p>
+          They're built on the same principle, but a fixed voltage divider uses two separate resistors
+          with a set ratio, while a potentiometer is a single variable resistive element with a movable
+          wiper, letting you continuously adjust the divider ratio by turning a knob or sliding a lever.
+        </p>
+      </div>
+      <div>
+        <h3>Glossary of Terms</h3>
+        <ul>
+          <li><strong>V<sub>in</sub>:</strong> the total input or supply voltage applied across the divider</li>
+          <li><strong>V<sub>out</sub>:</strong> the voltage measured at the junction between the two resistors</li>
+          <li><strong>Loading effect:</strong> the drop in output voltage caused by connecting a real circuit to the divider's output</li>
+          <li><strong>Thevenin resistance:</strong> the equivalent single resistance a divider presents to whatever is connected to its output</li>
+          <li><strong>Bleed current:</strong> the constant current that flows through a divider even when unloaded</li>
+        </ul>
+      </div>
     </div>
 
     <div class="nav-buttons">
