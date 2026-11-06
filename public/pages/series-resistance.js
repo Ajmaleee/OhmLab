@@ -98,6 +98,8 @@ function renderSeriesResistance() {
       </div>
     </div>
 
+    <div class="ad-slot" id="ad-slot-series"></div>
+
     <div class="explanation-section">
       <h2>Understanding Series Resistance</h2>
       <div>
@@ -287,6 +289,8 @@ function renderSeriesResistance() {
         </ul>
       </div>
     </div>
+
+    <div class="ad-slot" id="ad-slot-series-bottom"></div>
 
     <div class="nav-buttons">
       <a href="/parallel-resistance" class="btn-cyan">Calculate Parallel Resistance</a>

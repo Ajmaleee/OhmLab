@@ -104,6 +104,8 @@ function renderParallelResistance() {
       </div>
     </div>
 
+    <div class="ad-slot" id="ad-slot-parallel"></div>
+
     <div class="explanation-section">
       <h2>Understanding Parallel Resistance</h2>
       <div>
@@ -295,6 +297,8 @@ function renderParallelResistance() {
         </ul>
       </div>
     </div>
+
+    <div class="ad-slot" id="ad-slot-parallel-bottom"></div>
 
     <div class="nav-buttons">
       <a href="/series-resistance" class="btn-cyan">Calculate Series Resistance</a>

@@ -52,8 +52,9 @@ function renderHome() {
           </div>
         `;
         const isAdSlot = (i + 1) % 2 === 0;
+        const adSlotIndex = Math.ceil((i + 1) / 2);
         const adHtml = isAdSlot
-          ? `<div class="ad-slot"${i === 1 ? ' id="container-599b0f251b4dddca60e7fc09e25a632f"' : ''}></div>`
+          ? `<div class="ad-slot" id="${adSlotIndex === 1 ? 'container-599b0f251b4dddca60e7fc09e25a632f' : 'ad-slot-' + adSlotIndex}"></div>`
           : '';
         return [card, adHtml].filter(Boolean);
       }).join('')}
@@ -61,8 +62,8 @@ function renderHome() {
 
     <!-- Mobile: ads move to bottom so they never block reading -->
     <div class="mobile-ad-bottom">
-      <div class="ad-slot"></div>
-      <div class="ad-slot"></div>
+      <div class="ad-slot" id="ad-slot-mobile-1"></div>
+      <div class="ad-slot" id="ad-slot-mobile-2"></div>
     </div>
 
     <section class="content-section">

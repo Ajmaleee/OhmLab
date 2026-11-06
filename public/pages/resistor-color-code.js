@@ -183,6 +183,8 @@ function renderResistorColorCode() {
       </div>
     </div>
 
+    <div class="ad-slot" id="ad-slot-resistor"></div>
+
     <div class="explanation-section">
       <h2>How Resistor Color Codes Work</h2>
       <div>
@@ -392,6 +394,8 @@ function renderResistorColorCode() {
         </p>
       </div>
     </div>
+
+    <div class="ad-slot" id="ad-slot-resistor-bottom"></div>
 
     <div class="nav-buttons">
       <a href="/series-resistance" class="btn-cyan">Calculate Series Resistance</a>
