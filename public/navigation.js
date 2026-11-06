@@ -104,10 +104,6 @@ function renderSideAds() {
   right.className = 'side-ad side-ad-right';
   right.id = 'sideAdRight';
   document.body.appendChild(right);
-
-  const container = document.createElement('div');
-  container.id = 'container-599b0f251b4dddca60e7fc09e25a632f';
-  right.appendChild(container);
 }
 
 function openMenu() {

@@ -182,25 +182,29 @@ body {
   height: 600px;
   display: none;
   z-index: 10;
+  background-color: var(--gray-100);
 }
 
 .side-ad-left { left: 0; }
 .side-ad-right { right: 0; }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .side-ad {
     display: block;
   }
   .main-content {
     margin-left: 180px;
     margin-right: 180px;
+    width: calc(100% - 360px);
+    max-width: calc(80rem - 360px);
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .main-content {
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
   }
 }
 
