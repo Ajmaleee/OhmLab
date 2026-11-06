@@ -270,8 +270,8 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Native ad slot between calculator cards - in-flow, never covers content */
-.ad-native-banner {
+/* Native ad slot between cards - in-flow, never covers content */
+.ad-slot {
   grid-column: 1 / -1;
   height: 300px;
   display: flex;
@@ -281,10 +281,31 @@ body {
   border-radius: 0.75rem;
 }
 
+/* Mobile: ads move to bottom, never inline between cards */
+.mobile-ad-bottom {
+  display: none;
+  margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+  .ad-slot {
+    display: none;
+  }
+  .mobile-ad-bottom {
+    display: block;
+  }
+  .mobile-ad-bottom .ad-slot {
+    display: flex;
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+}
+
 @media (min-width: 768px) {
   .calc-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
 .calc-card {
   background-color: white;

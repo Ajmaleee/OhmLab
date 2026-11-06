@@ -43,20 +43,27 @@ function renderHome() {
 
     <section class="calc-grid">
       ${calculators.flatMap((calc, i) => {
-        const nativeBanner = i === 0
-          ? `<div id="container-599b0f251b4dddca60e7fc09e25a632f" class="ad-native-banner"></div>`
-          : '<div class="ad-native-banner"></div>';
-        return [
-          `<div class="calc-card">
+        const card = `
+          <div class="calc-card">
             <div class="card-icon">${calc.icon}</div>
             <h2>${calc.title}</h2>
             <p>${calc.description}</p>
             <a href="${calc.link}" class="btn-primary">Open Calculator</a>
-          </div>`,
-          i < calculators.length - 1 ? nativeBanner : ''
-        ];
+          </div>
+        `;
+        const isAdSlot = (i + 1) % 2 === 0;
+        const adHtml = isAdSlot
+          ? `<div class="ad-slot"${i === 1 ? ' id="container-599b0f251b4dddca60e7fc09e25a632f"' : ''}></div>`
+          : '';
+        return [card, adHtml].filter(Boolean);
       }).join('')}
     </section>
+
+    <!-- Mobile: ads move to bottom so they never block reading -->
+    <div class="mobile-ad-bottom">
+      <div class="ad-slot"></div>
+      <div class="ad-slot"></div>
+    </div>
 
     <section class="content-section">
       <h2>Who Is OhmLab For?</h2>
