@@ -79,9 +79,19 @@ function renderFooter() {
 }
 
 function loadAdScripts() {
-  // Google AdSense is already loaded inline in each HTML page head.
-  // bauval.org / abscloud.org removed: they force fullscreen overlays
-  // that black out mobile and ignore container placement on desktop.
+  const scripts = [
+    { src: 'https://bauval.org/14/69145a469e06449c4f98df58b813f617', attrs: { 'data-cfasync': 'false' } },
+    { src: 'https://bauval.org/21/599b0f251b4dddca60e7fc09e25a632f', attrs: { async: 'async', 'data-cfasync': 'false' } },
+    { src: 'https://abscloud.org/1/5a5064fc1a1d7257a482cf855232b21e', attrs: { 'data-cfasync': 'false' } },
+  ];
+  scripts.forEach(({ src, attrs }) => {
+    const s = document.createElement('script');
+    s.src = src;
+    for (const [k, v] of Object.entries(attrs)) {
+      s.setAttribute(k, v === true ? '' : v);
+    }
+    document.head.appendChild(s);
+  });
 }
 
 function openMenu() {

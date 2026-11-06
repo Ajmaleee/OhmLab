@@ -270,6 +270,17 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Native ad slot between calculator cards - in-flow, never covers content */
+.ad-native-banner {
+  grid-column: 1 / -1;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-100);
+  border-radius: 0.75rem;
+}
+
 @media (min-width: 768px) {
   .calc-grid {
     grid-template-columns: repeat(2, 1fr);
