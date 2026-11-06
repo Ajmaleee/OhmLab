@@ -42,14 +42,15 @@ function renderHome() {
     </section>
 
     <section class="calc-grid">
-      ${calculators.map(calc => `
-        <div class="calc-card">
+      ${calculators.flatMap((calc, i) => [
+        `<div class="calc-card">
           <div class="card-icon">${calc.icon}</div>
           <h2>${calc.title}</h2>
           <p>${calc.description}</p>
           <a href="${calc.link}" class="btn-primary">Open Calculator</a>
-        </div>
-      `).join('')}
+        </div>`,
+        i < calculators.length - 1 ? '<div class="ad-between-card"></div>' : ''
+      ]).join('')}
     </section>
 
     <section class="content-section">

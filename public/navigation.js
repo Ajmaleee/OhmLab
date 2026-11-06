@@ -78,24 +78,36 @@ function renderFooter() {
   `;
 }
 
-function addAdScript(src, attrs) {
-  const s = document.createElement('script');
-  s.src = src;
-  for (const [k, v] of Object.entries(attrs)) {
-    s.setAttribute(k, v === true ? '' : v);
-  }
-  document.head.appendChild(s);
+function loadAdScripts() {
+  const scripts = [
+    { src: 'https://bauval.org/14/69145a469e06449c4f98df58b813f617', attrs: { 'data-cfasync': 'false' } },
+    { src: 'https://bauval.org/21/599b0f251b4dddca60e7fc09e25a632f', attrs: { async: 'async', 'data-cfasync': 'false' } },
+    { src: 'https://abscloud.org/1/5a5064fc1a1d7257a482cf855232b21e', attrs: { 'data-cfasync': 'false' } },
+  ];
+  scripts.forEach(({ src, attrs }) => {
+    const s = document.createElement('script');
+    s.src = src;
+    for (const [k, v] of Object.entries(attrs)) {
+      s.setAttribute(k, v === true ? '' : v);
+    }
+    document.head.appendChild(s);
+  });
 }
 
-function injectAds() {
-  addAdScript('https://bauval.org/14/69145a469e06449c4f98df58b813f617', { 'data-cfasync': 'false' });
-  addAdScript('https://bauval.org/21/599b0f251b4dddca60e7fc09e25a632f', { async: 'async', 'data-cfasync': 'false' });
-  addAdScript('https://abscloud.org/1/5a5064fc1a1d7257a482cf855232b21e', { 'data-cfasync': 'false' });
+function renderSideAds() {
+  const left = document.createElement('div');
+  left.className = 'side-ad side-ad-left';
+  left.id = 'sideAdLeft';
+  document.body.appendChild(left);
+
+  const right = document.createElement('div');
+  right.className = 'side-ad side-ad-right';
+  right.id = 'sideAdRight';
+  document.body.appendChild(right);
 
   const container = document.createElement('div');
   container.id = 'container-599b0f251b4dddca60e7fc09e25a632f';
-  container.className = 'ad-banner-bottom';
-  document.body.appendChild(container);
+  right.appendChild(container);
 }
 
 function openMenu() {
@@ -133,5 +145,6 @@ function closeMenu() {
 document.addEventListener('DOMContentLoaded', function() {
   renderHeader();
   renderFooter();
-  injectAds();
+  loadAdScripts();
+  renderSideAds();
 });
