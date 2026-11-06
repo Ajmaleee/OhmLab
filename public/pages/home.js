@@ -42,20 +42,14 @@ function renderHome() {
     </section>
 
     <section class="calc-grid">
-      ${calculators.flatMap((calc, i) => {
-        const adSlot = i === 0
-          ? `<div id="container-599b0f251b4dddca60e7fc09e25a632f" class="ad-between-card"></div>`
-          : '<div class="ad-between-card"></div>';
-        return [
-          `<div class="calc-card">
-            <div class="card-icon">${calc.icon}</div>
-            <h2>${calc.title}</h2>
-            <p>${calc.description}</p>
-            <a href="${calc.link}" class="btn-primary">Open Calculator</a>
-          </div>`,
-          i < calculators.length - 1 ? adSlot : ''
-        ];
-      }).join('')}
+      ${calculators.map(calc => `
+        <div class="calc-card">
+          <div class="card-icon">${calc.icon}</div>
+          <h2>${calc.title}</h2>
+          <p>${calc.description}</p>
+          <a href="${calc.link}" class="btn-primary">Open Calculator</a>
+        </div>
+      `).join('')}
     </section>
 
     <section class="content-section">

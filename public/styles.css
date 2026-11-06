@@ -174,40 +174,6 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Side ad placeholders - desktop only, never overlaps content */
-.side-ad {
-  position: fixed;
-  top: 90px;
-  width: 160px;
-  height: 600px;
-  display: none;
-  z-index: 10;
-  background-color: var(--gray-100);
-}
-
-.side-ad-left { left: 0; }
-.side-ad-right { right: 0; }
-
-@media (min-width: 1280px) {
-  .side-ad {
-    display: block;
-  }
-  .main-content {
-    margin-left: 180px;
-    margin-right: 180px;
-    width: calc(100% - 360px);
-    max-width: calc(80rem - 360px);
-  }
-}
-
-@media (max-width: 1279px) {
-  .main-content {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
 /* Footer */
 .site-footer {
   background-color: var(--gray-900);
@@ -302,19 +268,6 @@ body {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  grid-auto-flow: dense;
-}
-
-/* Ad slot between calculator cards */
-.ad-between-card {
-  grid-column: 1 / -1;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--gray-100);
-  border-radius: 0.75rem;
-  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
