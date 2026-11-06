@@ -110,7 +110,7 @@ function renderVoltageDivider() {
       </div>
     </div>
 
-    <div class="ad-slot" id="ad-slot-voltage"></div>
+    <div class="ad-slot" id="container-599b0f251b4dddca60e7fc09e25a632f"></div>
 
     <div class="explanation-section">
       <h2>Understanding Voltage Dividers</h2>
@@ -335,7 +335,7 @@ function renderVoltageDivider() {
       </div>
     </div>
 
-    <div class="ad-slot" id="ad-slot-voltage-bottom"></div>
+    <div class="ad-slot" id="container-599b0f251b4dddca60e7fc09e25a632f"></div>
 
     <div class="nav-buttons">
       <a href="/series-resistance" class="btn-cyan">Calculate Series Resistance</a>

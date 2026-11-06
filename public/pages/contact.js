@@ -91,7 +91,7 @@ function renderContact() {
         </div>
       </div>
 
-      <div class="ad-slot" id="ad-slot-contact"></div>
+      <div class="ad-slot" id="container-599b0f251b4dddca60e7fc09e25a632f"></div>
 
       <h2>Send Us a Message</h2>
       <p>Fill out the form below and we'll get back to you as soon as possible.</p>
@@ -108,7 +108,7 @@ function renderContact() {
         </ul>
       </div>
 
-      <div class="ad-slot" id="ad-slot-contact-bottom"></div>
+      <div class="ad-slot" id="container-599b0f251b4dddca60e7fc09e25a632f"></div>
     </div>
   `;
 
